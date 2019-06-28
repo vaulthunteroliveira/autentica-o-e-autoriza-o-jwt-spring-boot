@@ -10,7 +10,7 @@ import com.alexoliveira.redesocial.model.Usuario;
 import com.alexoliveira.redesocial.service.UsuarioService;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UsuarioService service;
@@ -21,7 +21,7 @@ public class UserService implements UserDetailsService {
 		if(usuario == null) {
 			throw new UsernameNotFoundException(email);
 		}
-		return new User(usuario.getId(),usuario.getEmail(), usuario.getSenha(), usuario.getPerfis());
+		return new UserDetailsImpl(usuario.getId(),usuario.getEmail(), usuario.getSenha(), usuario.getPerfis());
 	}
 
 }

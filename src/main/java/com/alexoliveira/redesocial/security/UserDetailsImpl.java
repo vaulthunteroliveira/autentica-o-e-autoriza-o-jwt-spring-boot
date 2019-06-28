@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.alexoliveira.redesocial.enums.Perfil;
 
-public class User implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
@@ -19,11 +19,11 @@ public class User implements UserDetails {
 	private String senha;
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public User() {
+	public UserDetailsImpl() {
 		super();
 	}
 
-	public User(Long id, String email, String senha, Set<Perfil> perfis) {
+	public UserDetailsImpl(Long id, String email, String senha, Set<Perfil> perfis) {
 		super();
 		this.id = id;
 		this.email = email;
